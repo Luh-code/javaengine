@@ -1,8 +1,8 @@
 #include "include/libtest/JEBase.h"
 #include "include/libtest/lib.h"
 
-JNIEXPORT void JNICALL Java_JEBase_doSomething
-  (JNIEnv *, jobject)
+JNIEXPORT jint JNICALL Java_JEBase_doSomething
+  (JNIEnv *, jclass, jint value)
 {
-  doSomething(5);
+  return doSomething((uint32_t)value);
 }

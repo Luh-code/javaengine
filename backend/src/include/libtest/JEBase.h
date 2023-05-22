@@ -10,10 +10,10 @@ extern "C" {
 /*
  * Class:     JEBase
  * Method:    doSomething
- * Signature: ()V
+ * Signature: (I)I
  */
-JNIEXPORT void JNICALL Java_JEBase_doSomething
-  (JNIEnv *, jobject);
+JNIEXPORT jint JNICALL Java_JEBase_doSomething
+  (JNIEnv *, jclass, jint value);
 
 #ifdef __cplusplus
 }
