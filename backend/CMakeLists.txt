@@ -48,10 +48,13 @@ file(GLOB JEBaseSrcFiles
 )
 
 set (JAVA_HOME /usr/lib/jvm/java-20-openjdk)
+set (JAVA_INCLUDES ${JAVA_HOME}/include ${JAVA_HOME}/include/linux)
 
 add_library(JEBase SHARED ${JEBaseSrcFiles})
 set_target_properties(JEBase PROPERTIES LINKER_LANGUAGE CXX)
-target_include_directories(JEBase PUBLIC ${JAVA_HOME}/include ${JAVA_HOME}/include/linux)
+target_include_directories(JEBase PUBLIC ${JAVA_INCLUDES})
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/ECS)
 
 enable_testing()
 add_subdirectory(${PROJECT_SOURCE_DIR}/tests)
